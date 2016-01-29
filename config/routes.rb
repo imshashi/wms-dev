@@ -4,4 +4,11 @@ Rails.application.routes.draw do
 
   get '/payments/:mobile/:amount' => "charges#new"
 
+  get 'about' => "home#about"
+  get 'faq' => "home#faq"
+  get 'legal' => "home#legal"
+  get 'thankyou' => "home#thankyou"
+
+
+  root to: 'home#index'
 end

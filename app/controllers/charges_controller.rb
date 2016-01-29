@@ -22,7 +22,7 @@ class ChargesController < ApplicationController
     )
 
     # Create the charge using the customer data returned by Stripe API
-    charge = Stripe::Charge.create(
+    @charge = Stripe::Charge.create(
       customer: customer.id,
       amount: amount,
       description: 'Rails Stripe customer',
@@ -34,6 +34,5 @@ class ChargesController < ApplicationController
       rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to charges_path
-      flash[:notice] = "Please try again"
     end
 end

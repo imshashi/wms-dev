@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>StripeApp</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/header'%>
 </head>
 <body>
-  <%= yield %>
+
+        <!-- logo -->
+        <div class="color-bg-primary padding-tb1">
+          <div class="row">
+            <div class="large-8 medium-8 small-11 columns small-centered">
+
+              <div style="width:256px;" class="center editable">
+                <a href="/"><h1 class="text-center margin-none"><%= image_tag('sense_256@2x.png', class: 'retina', alt: "Sense Logo")%></h1></a>
+              </div>
+               <p class="margin-t2 text-center">
+                 <!-- <a href="https://twitter.com/hellosense" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow</a>
+                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> -->
+                <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.instagram.com/wemakesense/"> <i class="fa fa-instagram opacity1"></i> &nbsp;Follow</a>
+                <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.facebook.com/HeySense/?fref=ts"><i class="fa fa-facebook-square opacity1"></i> &nbsp;Like</a>
+                <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://twitter.com/heysense"><i class="fa fa-twitter-square opacity1"></i> &nbsp;Follow</a>
+              </p> -->
+            </div>
+          </div>
+        </div>
+        <%= yield %>
+
+  <%= render 'layouts/footer'%>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<div class='charge-padding' >
 <%= form_tag charges_path do %>
   <%= hidden_field_tag 'amount', @amount%>
   <article>
@@ -7,11 +8,10 @@
       </div>
     <% end %>
      <label class="amount">
-      <span>Mobile: <%= @mobile %></span>
-    </label></br>
-    <label class="amount">
+      <span>Mobile: <%= @mobile %></span></br>
       <span>Amount: $<%= @amount %></span>
     </label>
+
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -20,3 +20,5 @@
           data-amount="<%= @amount * 100 %>"
           data-locale="auto"></script>
 <% end %>
+
+</div>
