@@ -13,7 +13,7 @@ class ChargesController < ApplicationController
   def create
     # Amount in cents
     #params[:stripeAmount] = 10
-    amount = params[:stripeAmount].to_i * 100
+    amount = params[:amount].to_i * 100
 
     # Create the customer in Stripe
     customer = Stripe::Customer.create(
@@ -26,8 +26,7 @@ class ChargesController < ApplicationController
       customer: customer.id,
       amount: amount,
       description: 'Rails Stripe customer',
-      currency: 'usd',
-      balance_transaction: params[:stripeBalanceTransaction]
+      currency: 'usd'
       # balance_transaction: params[:stripeBalanceTransaction]
     )
 
