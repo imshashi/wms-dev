@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  #layout :resolve_layout
+  layout :resolve_layout
   def index
   end
 
@@ -15,13 +15,13 @@ class HomeController < ApplicationController
   def thankyou
   end
 
-  # private
+  private
 
-  # def resolve_layout
-  #    if %w(index).include?(params[:action])
-  #     "application"
-  #   else
-  #     "charges"
-  #   end
-  # end
+  def resolve_layout
+     if %w(index).include?(params[:action])
+      "application"
+    else
+      "charges"
+    end
+  end
 end

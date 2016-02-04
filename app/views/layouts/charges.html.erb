@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Payment</title>
+
+  <title>
+    <%= yield(:title) || "Sense | Movie Recomendations On-Demand" %>
+  </title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -21,10 +24,12 @@
                <p class="margin-t2 text-center">
                  <!-- <a href="https://twitter.com/hellosense" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow</a>
                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> -->
-                <!-- <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.instagram.com/wemakesense/"> <i class="fa fa-instagram opacity1"></i> &nbsp;Follow</a>
-                <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.facebook.com/HeySense/?fref=ts"><i class="fa fa-facebook-square opacity1"></i> &nbsp;Like</a>
-                <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://twitter.com/heysense"><i class="fa fa-twitter-square opacity1"></i> &nbsp;Follow</a> -->
-              </p> -->
+                <% if params[:controller] == "home" %>
+                  <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.instagram.com/wemakesense/"> <i class="fa fa-instagram opacity1"></i> &nbsp;Follow</a>
+                  <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://www.facebook.com/HeySense/?fref=ts"><i class="fa fa-facebook-square opacity1"></i> &nbsp;Like</a>
+                  <a class="margin-lr1 padding-05 color-bg-primary-300 text-light text-decoration-none rounded" target="_blank" href="https://twitter.com/heysense"><i class="fa fa-twitter-square opacity1"></i> &nbsp;Follow</a>
+                <% end %>
+              </p>
             </div>
           </div>
         </div>
