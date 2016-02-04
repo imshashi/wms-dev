@@ -1,19 +1,24 @@
 class ChargesController < ApplicationController
 
+  @@amount = 0.0
+  @@mobile = ''
+  
   def new
     if params[:amount].present?
-      @amount = params[:amount].to_f / 320.to_f
-      @mobile = params[:mobile]
+      @@amount = params[:amount].to_f / 320.to_f
+      @@mobile = params[:mobile]
+      @amount = @@amount
+      @mobile = @@mobile
     else
-      @amount = 0.0
-      @mobile = ''
+      @@amount = 0.0
+      @@mobile = ''
     end
   end
 
   def create
     # Amount in cents
     #params[:stripeAmount] = 10
-    amount = params[:amount].to_i * 100
+    amount = @@amount.to_i * 100
 
     # Create the customer in Stripe
     customer = Stripe::Customer.create(
@@ -25,7 +30,7 @@ class ChargesController < ApplicationController
     @charge = Stripe::Charge.create(
       customer: customer.id,
       amount: amount,
-      description: 'Rails Stripe customer',
+      description: "Payment made by #{@@mobile}, #{params[:stripeEmail]}",
       currency: 'usd'
       # balance_transaction: params[:stripeBalanceTransaction]
     )
