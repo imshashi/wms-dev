@@ -1,14 +1,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
+<meta name="description" content="<%= yield(:description) || "Send a text to kill Netflix clutter & get picks truly made for you." %>"/>
+
 <link href="http://www.wemakesense.co/" rel="canonical" />
 
 <!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="<%= yield(:headline) || "Send a text to kill Netflix clutter & get picks truly made for you." %>" />
+<meta itemprop="description" content="<%= yield(:description) || "Send a text to kill Netflix clutter & get picks truly made for you." %>"/>
+<meta itemprop="image" content="<%= image_url('thumbnails/thumbnail-facebook-sense.png') %>" />
+
 
 <!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@HeySense">
+<meta name="twitter:title" content="<%= yield(:headline) || "Send a text to kill Netflix clutter & get picks truly made for you." %>">
+<meta name="twitter:description" content="<%= yield(:description) || "Send a text to kill Netflix clutter & get picks truly made for you." %>">
+<meta name="twitter:creator" content="@HeySense">
+<meta name="twitter:image:src" content="<%= image_url('thumbnails/thumbnail-facebook-sense.png') %>">
 
 <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,400italic,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="<%= yield(:headline) || "Send a text to kill Netflix clutter & get picks truly made for you." %>"/>
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<%= image_url('thumbnails/thumbnail-facebook-sense.png') %>"/>
+<meta property="og:description" content="<%= yield(:description) || "Send a text to kill Netflix clutter & get picks truly made for you." %>" />
 
 
 <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
